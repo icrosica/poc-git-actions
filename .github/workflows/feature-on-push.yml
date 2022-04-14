@@ -1,0 +1,35 @@
+# Unique name for this workflow
+name: On push feature - Deploy to DEV
+
+# Definition when the workflow should run
+on:
+    push:
+        branches:
+            - feature/*
+
+# Jobs to be executed 01
+jobs:
+    build-deploy:
+        runs-on: ubuntu-latest
+        steps:
+            # Checkout the code in the pull request
+            - name: 'Checkout source code'
+              uses: actions/checkout@v2
+
+            - name: 'Build and Deploy'
+              uses: icrosica/sfdx-orgdev-build-deploy@master
+              with:
+                type: 'sandbox'
+                current_branch: ${GITHUB_REF##*/}
+                target_branch: develop 
+                certificate_path: devops/server.key.enc
+                decryption_key: ${{ secrets.DECRYPTION_KEY }}
+                decryption_iv: ${{ secrets.DECRYPTION_IV }}
+                client_id: ${{ secrets.CONSUMER_KEY }}
+                username: ${{ secrets.USER_NAME }}
+                checkonly: false
+                deploy_wait_time: '10'
+                manifest_path: package/package.xml
+                destructive_path: destructiveChanges
+                data_factory: scripts/apex/CreateBaseData.apex
+                default_source_path: force-app/main/default
