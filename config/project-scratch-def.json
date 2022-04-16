@@ -1,13 +1,4 @@
 {
   "orgName": "irosica company",
-  "edition": "Developer",
-  "features": ["EnableSetPasswordInApi"],
-  "settings": {
-    "lightningExperienceSettings": {
-      "enableS1DesktopEnabled": true
-    },
-    "mobileSettings": {
-      "enableS1EncryptedStoragePref2": false
-    }
-  }
+  "sourceOrg": "00D8c000002ggmr"
 }
