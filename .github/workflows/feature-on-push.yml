@@ -19,9 +19,7 @@ jobs:
             - name: 'Build and Deploy'
               uses: icrosica/sfdx-orgdev-build-deploy@masterv0
               with:
-                type: 'sandbox'
-                current_branch: ${GITHUB_REF##*/}
-                target_branch: develop 
+                type: 'sandbox' 
                 certificate_path: devops/server.key.enc
                 decryption_key: ${{ secrets.DECRYPTION_KEY }}
                 decryption_iv: ${{ secrets.DECRYPTION_IV }}
