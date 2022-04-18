@@ -17,7 +17,7 @@ jobs:
               uses: actions/checkout@v2
 
             - name: 'Build and Deploy'
-              uses: icrosica/sfdx-orgdev-build-deploy@masterv0
+              uses: renatocead/sfdx-orgdev-build-deploy@master
               with:
                 type: 'sandbox' 
                 certificate_path: devops/server.key.enc
@@ -27,7 +27,7 @@ jobs:
                 username: ${{ secrets.USER_NAME }}
                 checkonly: false
                 deploy_wait_time: '10'
-                manifest_path: package/package.xml
+                manifest_path: package.xml
                 destructive_path: destructiveChanges
                 data_factory: scripts/apex/CreateBaseData.apex
                 default_source_path: force-app/main/default
