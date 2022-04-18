@@ -26,7 +26,7 @@
         <name>aaaavvvv</name>
         <label>aaaa</label>
         <locationX>176</locationX>
-        <locationY>158</locationY>
+        <locationY>278</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -41,11 +41,33 @@
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
+    <screens>
+        <name>Teste3</name>
+        <label>Teste3</label>
+        <locationX>176</locationX>
+        <locationY>158</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>aaaavvvv</targetReference>
+        </connector>
+        <fields>
+            <name>sssss</name>
+            <dataType>Number</dataType>
+            <fieldText>aass</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+            <scale>0</scale>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
     <start>
         <locationX>50</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>aaaavvvv</targetReference>
+            <targetReference>Teste3</targetReference>
         </connector>
     </start>
     <status>Active</status>
